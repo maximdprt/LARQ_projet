@@ -86,7 +86,7 @@ function IntroductionTab() {
           transition={{ duration: 0.6 }}
           className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6"
         >
-          L'Avenir de l'Hydratation
+          L&apos;Avenir de l&apos;Hydratation
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: -20 }}
@@ -94,8 +94,8 @@ function IntroductionTab() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-8"
         >
-          La première solution d'hydratation portable au monde utilisant la technologie UV-C LED 
-          pour purifier l'eau et nettoyer les surfaces internes de la bouteille. 
+          La première solution d&apos;hydratation portable au monde utilisant la technologie UV-C LED 
+          pour purifier l&apos;eau et nettoyer les surfaces internes de la bouteille. 
           Accédez à une eau pure, partout et tout le temps, tout en éliminant la dépendance au plastique à usage unique.
         </motion.p>
         <motion.a
@@ -113,15 +113,15 @@ function IntroductionTab() {
 
       {/* Introduction du mémorandum */}
       <div className="prose prose-lg max-w-none">
-        <h2 className="text-3xl font-bold text-gray-900 mb-6">1. Introduction : L'Innovation au service de la santé</h2>
+        <h2 className="text-3xl font-bold text-gray-900 mb-6">1. Introduction : L&apos;Innovation au service de la santé</h2>
         <p className="text-gray-700 leading-relaxed mb-4">
           Dans un monde où le bien-être et la durabilité sont devenus des priorités absolues, notre entreprise propose 
-          bien plus qu'une simple bouteille d'eau. Nous commercialisons la technologie LARQ, la première solution 
-          d'hydratation portable au monde utilisant la technologie UV-C LED pour purifier l'eau et nettoyer les surfaces 
+          bien plus qu&apos;une simple bouteille d&apos;eau. Nous commercialisons la technologie LARQ, la première solution 
+          d&apos;hydratation portable au monde utilisant la technologie UV-C LED pour purifier l&apos;eau et nettoyer les surfaces 
           internes de la bouteille.
         </p>
         <p className="text-gray-700 leading-relaxed">
-          Notre mission est simple : permettre l'accès à une eau pure, partout et tout le temps, tout en éliminant 
+          Notre mission est simple : permettre l&apos;accès à une eau pure, partout et tout le temps, tout en éliminant 
           la dépendance au plastique à usage unique.
         </p>
       </div>
@@ -155,9 +155,9 @@ function ProblemeSolutionTab() {
                 </div>
               </div>
               <div>
-                <h4 className="font-semibold text-gray-900 mb-2">L'hygiène douteuse</h4>
+                <h4 className="font-semibold text-gray-900 mb-2">L&apos;hygiène douteuse</h4>
                 <p className="text-gray-700 text-sm">
-                  Les bouteilles réutilisables classiques sont des nids à bactéries. Après quelques jours d'utilisation, 
+                  Les bouteilles réutilisables classiques sont des nids à bactéries. Après quelques jours d&apos;utilisation, 
                   elles développent souvent une odeur désagréable due à la prolifération microbienne.
                 </p>
               </div>
@@ -172,9 +172,9 @@ function ProblemeSolutionTab() {
                 </div>
               </div>
               <div>
-                <h4 className="font-semibold text-gray-900 mb-2">L'incertitude de la source</h4>
+                <h4 className="font-semibold text-gray-900 mb-2">L&apos;incertitude de la source</h4>
                 <p className="text-gray-700 text-sm">
-                  En déplacement ou en voyage, trouver une source d'eau potable fiable n'est pas toujours garanti.
+                  En déplacement ou en voyage, trouver une source d&apos;eau potable fiable n&apos;est pas toujours garanti.
                 </p>
               </div>
             </div>
@@ -235,7 +235,7 @@ function ProblemeSolutionTab() {
               <div>
                 <h4 className="font-semibold text-gray-900 mb-2">Automatisme</h4>
                 <p className="text-gray-700 text-sm">
-                  S'active automatiquement toutes les 2 heures pour garder l'eau pure et la bouteille sans odeur.
+                  S&apos;active automatiquement toutes les 2 heures pour garder l&apos;eau pure et la bouteille sans odeur.
                 </p>
               </div>
             </div>
@@ -251,7 +251,7 @@ function ProblemeSolutionTab() {
               <div>
                 <h4 className="font-semibold text-gray-900 mb-2">Design & Thermique</h4>
                 <p className="text-gray-700 text-sm">
-                  Une double paroi isolée sous vide garde l'eau froide pendant <strong>24h</strong> et chaude pendant <strong>12h</strong>.
+                  Une double paroi isolée sous vide garde l&apos;eau froide pendant <strong>24h</strong> et chaude pendant <strong>12h</strong>.
                 </p>
               </div>
             </div>
@@ -285,7 +285,7 @@ function MarcheTab() {
           <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-6 border-2 border-blue-100">
             <div className="text-4xl font-bold mb-3">💼</div>
             <h4 className="text-xl font-bold text-gray-900 mb-2">LinkedIn</h4>
-            <p className="text-gray-700">Positionnement B2B et professionnel pour les cadeaux d'affaires et la communication corporate.</p>
+            <p className="text-gray-700">Positionnement B2B et professionnel pour les cadeaux d&apos;affaires et la communication corporate.</p>
           </div>
         </div>
       </div>
@@ -299,7 +299,7 @@ function MarcheTab() {
             <div className="text-2xl md:text-3xl font-semibold mb-2">Milliards €</div>
             <p className="text-lg opacity-90">Marché global de la bouteille réutilisable (2023)</p>
             <p className="text-sm mt-4 opacity-75">
-              Devrait atteindre près de <strong>11 milliards €</strong> d'ici 2028 
+              Devrait atteindre près de <strong>11 milliards €</strong> d&apos;ici 2028 
               (Croissance annuelle ~4.5%)
             </p>
           </div>
@@ -317,7 +317,7 @@ function MarcheTab() {
         <div className="mt-8 bg-gray-50 rounded-xl p-6 border border-gray-200">
           <p className="text-gray-700 leading-relaxed">
             <strong>Notre avantage :</strong> Nous ne vendons pas seulement un contenant, nous vendons de la technologie 
-            sanitaire grand public. Nous nous positionnons sur le segment <strong>"Premium"</strong>, où les marges sont 
+            sanitaire grand public. Nous nous positionnons sur le segment <strong>&quot;Premium&quot;</strong>, où les marges sont 
             plus élevées et la concurrence moins féroce que sur les gourdes classiques.
           </p>
         </div>
@@ -344,11 +344,11 @@ function CroissanceTab() {
       <div className="bg-gray-50 rounded-xl p-6 mb-8">
         <p className="text-gray-700 text-center">
           Basé sur des modèles de réussite similaires dans le secteur D2C (Direct-to-Consumer) et la croissance 
-          actuelle de l'IoT (Internet of Things) grand public, voici notre prévisionnel réaliste :
+          actuelle de l&apos;IoT (Internet of Things) grand public, voici notre prévisionnel réaliste :
         </p>
         <p className="text-center mt-4 text-sm text-gray-600">
           <strong>Note :</strong> Ces chiffres sont basés sur un panier moyen de {panierMoyen}€ et une croissance 
-          réaliste de x3 par an, typique des startups hardware à succès en phase de "Seed".
+          réaliste de x3 par an, typique des startups hardware à succès en phase de &quot;Seed&quot;.
         </p>
       </div>
 
@@ -437,7 +437,7 @@ function OpportuniteTab() {
           
           <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
             <div className="text-4xl mb-4">⭐</div>
-            <h3 className="text-xl font-bold mb-3">La "Premiumisation"</h3>
+            <h3 className="text-xl font-bold mb-3">La &quot;Premiumisation&quot;</h3>
             <p className="text-sm opacity-90">
               Les consommateurs sont prêts à payer plus cher (High Ticket) pour des produits durables, technologiques et beaux. 
               Cela garantit une marge brute confortable.
@@ -446,10 +446,10 @@ function OpportuniteTab() {
           
           <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
             <div className="text-4xl mb-4">📈</div>
-            <h3 className="text-xl font-bold mb-3">L'évolutivité</h3>
+            <h3 className="text-xl font-bold mb-3">L&apos;évolutivité</h3>
             <p className="text-sm opacity-90">
               Le produit est compact, facile à stocker et à expédier, ce qui minimise les coûts logistiques et facilite 
-              l'expansion internationale rapide via le e-commerce.
+              l&apos;expansion internationale rapide via le e-commerce.
             </p>
           </div>
         </div>
@@ -461,7 +461,7 @@ function OpportuniteTab() {
         
         <div className="text-center mb-12">
           <p className="text-xl md:text-2xl mb-4 opacity-90">
-            Pour passer du stade de lancement à l'accélération (Scale-up), nous ouvrons notre capital ou sollicitons un financement à hauteur de :
+            Pour passer du stade de lancement à l&apos;accélération (Scale-up), nous ouvrons notre capital ou sollicitons un financement à hauteur de :
           </p>
           <div className="text-6xl md:text-7xl font-bold mb-2">350 000 €</div>
         </div>
@@ -505,18 +505,18 @@ function ConclusionTab() {
       <div className="prose prose-lg max-w-none">
         <h2 className="text-3xl font-bold text-gray-900 mb-6">7. Conclusion</h2>
         <p className="text-gray-700 leading-relaxed mb-4 text-lg">
-          Nous ne sommes pas au début d'une simple tendance, mais face à un changement durable des modes de consommation. 
-          Avec la technologie LARQ, nous avons le meilleur produit de sa catégorie. Il nous manque aujourd'hui le carburant 
+          Nous ne sommes pas au début d&apos;une simple tendance, mais face à un changement durable des modes de consommation. 
+          Avec la technologie LARQ, nous avons le meilleur produit de sa catégorie. Il nous manque aujourd&apos;hui le carburant 
           financier pour dominer le marché français et européen.
         </p>
         <p className="text-gray-700 leading-relaxed text-lg font-semibold">
-          Rejoignez-nous pour redéfinir la façon dont le monde boit de l'eau.
+          Rejoignez-nous pour redéfinir la façon dont le monde boit de l&apos;eau.
         </p>
       </div>
 
       {/* CTA Section */}
       <div className="bg-gradient-to-br from-larq-blue to-larq-blue-dark rounded-2xl p-8 md:p-12 text-white text-center">
-        <h3 className="text-2xl md:text-3xl font-bold mb-6">Prêt à investir dans l'avenir de l'hydratation ?</h3>
+        <h3 className="text-2xl md:text-3xl font-bold mb-6">Prêt à investir dans l&apos;avenir de l&apos;hydratation ?</h3>
         <motion.a
           href="/faq"
           whileHover={{ scale: 1.05 }}

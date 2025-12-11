@@ -39,7 +39,7 @@ export default function ProductDescription() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-gray-900 via-larq-blue to-gray-900 bg-clip-text text-transparent tracking-tight leading-tight px-4"
               >
-                L'EAU. RÉINVENTÉE.
+                L&apos;EAU. RÉINVENTÉE.
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0 }}
@@ -68,7 +68,7 @@ export default function ProductDescription() {
                   transition={{ duration: 0.6, delay: 0.4 }}
                   className="text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed md:leading-loose"
                 >
-                  On connaît tous cette sensation. La fatigue de 15h, le manque de concentration, ce corps qui tourne au ralenti. Pourquoi ? Parce qu'on oublie l'essentiel.{' '}
+                  On connaît tous cette sensation. La fatigue de 15h, le manque de concentration, ce corps qui tourne au ralenti. Pourquoi ? Parce qu&apos;on oublie l&apos;essentiel.{' '}
                   <motion.strong
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
@@ -86,7 +86,7 @@ export default function ProductDescription() {
                   transition={{ duration: 0.6, delay: 0.5 }}
                   className="text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed md:leading-loose"
                 >
-                  Oubliez les bouteilles en plastique et l'angoisse de l'eau non potable en voyage. Voici{' '}
+                  Oubliez les bouteilles en plastique et l&apos;angoisse de l&apos;eau non potable en voyage. Voici{' '}
                   <motion.strong
                     whileHover={{ scale: 1.1 }}
                     className="text-larq-blue text-2xl md:text-3xl font-bold inline-block"
@@ -101,7 +101,7 @@ export default function ProductDescription() {
                   transition={{ duration: 0.6, delay: 0.6 }}
                   className="text-lg md:text-xl lg:text-2xl text-gray-900 font-semibold leading-relaxed md:leading-loose pt-4 border-t border-gray-200"
                 >
-                  Ce n'est pas juste une bouteille. C'est votre station de purification personnelle et votre coach santé, fusionnés dans un design cyber-futuriste.
+                  Ce n&apos;est pas juste une bouteille. C&apos;est votre station de purification personnelle et votre coach santé, fusionnés dans un design cyber-futuriste.
                 </motion.p>
               </div>
             </motion.div>
@@ -137,14 +137,14 @@ export default function ProductDescription() {
                   transition={{ duration: 0.6, delay: 0.5 }}
                   className="text-sm md:text-base lg:text-lg text-gray-700 leading-relaxed md:leading-loose relative z-10 flex-grow"
                 >
-                  Une rivière en randonnée ? Un robinet douteux à l'autre bout du monde ? Remplissez. Appuyez sur l'unique bouton tactile. En quelques secondes, notre technologie de filtration active élimine{' '}
+                  Une rivière en randonnée ? Un robinet douteux à l&apos;autre bout du monde ? Remplissez. Appuyez sur l&apos;unique bouton tactile. En quelques secondes, notre technologie de filtration active élimine{' '}
                   <motion.strong
                     whileHover={{ scale: 1.2, rotate: 5 }}
                     className="text-larq-blue text-xl md:text-2xl font-bold inline-block"
                   >
                     100%
                   </motion.strong>{' '}
-                  des bactéries et impuretés. N'importe quelle eau devient votre source de vie.
+                  des bactéries et impuretés. N&apos;importe quelle eau devient votre source de vie.
                 </motion.p>
               </motion.div>
 
@@ -178,7 +178,7 @@ export default function ProductDescription() {
                     transition={{ duration: 0.6, delay: 0.6 }}
                     className="text-sm md:text-base lg:text-lg text-gray-700 leading-relaxed md:leading-loose"
                   >
-                    LARQ ne se contente pas de contenir de l'eau, elle communique. Les lignes néons ne sont pas seulement esthétiques : elles vous indiquent en temps réel le niveau d'eau et la qualité de filtration.
+                    LARQ ne se contente pas de contenir de l&apos;eau, elle communique. Les lignes néons ne sont pas seulement esthétiques : elles vous indiquent en temps réel le niveau d&apos;eau et la qualité de filtration.
                   </motion.p>
                   <motion.p
                     initial={{ opacity: 0 }}
@@ -187,7 +187,7 @@ export default function ProductDescription() {
                     transition={{ duration: 0.6, delay: 0.7 }}
                     className="text-sm md:text-base lg:text-lg text-gray-700 leading-relaxed md:leading-loose"
                   >
-                    Connectée à l'app LARQ, la bouteille apprend vos habitudes. Elle sait quand vous avez besoin de boire avant même que vous n'ayez soif. Une notification douce, un flash lumineux : votre coach vous rappelle de rester au top de votre forme.
+                    Connectée à l&apos;app LARQ, la bouteille apprend vos habitudes. Elle sait quand vous avez besoin de boire avant même que vous n&apos;ayez soif. Une notification douce, un flash lumineux : votre coach vous rappelle de rester au top de votre forme.
                   </motion.p>
                 </div>
               </motion.div>
@@ -217,7 +217,7 @@ export default function ProductDescription() {
                 transition={{ duration: 0.6, delay: 0.7 }}
                 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900 leading-tight px-4"
               >
-                Le design de demain, pour l'aventure d'aujourd'hui.
+                Le design de demain, pour l&apos;aventure d&apos;aujourd&apos;hui.
               </motion.p>
               <motion.p
                 initial={{ opacity: 0 }}

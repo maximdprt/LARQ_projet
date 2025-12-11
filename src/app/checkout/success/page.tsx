@@ -57,7 +57,7 @@ export default function CheckoutSuccessPage() {
                 href="/"
                 className="px-6 py-3 bg-gray-100 text-gray-700 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
               >
-                Retour à l'accueil
+                Retour à l&apos;accueil
               </Link>
             </div>
           </motion.div>

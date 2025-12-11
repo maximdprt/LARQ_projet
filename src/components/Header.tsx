@@ -17,7 +17,7 @@ export default function Header() {
       <div className="bg-larq-blue-dark text-white py-3 px-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <p className="text-xs md:text-sm lg:text-base text-center flex-1 px-2">
-            Plus vous achetez, plus vous économisez ! Profitez jusqu'à €40 de réduction sur tout le site.
+            Plus vous achetez, plus vous économisez ! Profitez jusqu&apos;à €40 de réduction sur tout le site.
           </p>
           <motion.button
             onClick={handleLearnMore}
@@ -40,7 +40,7 @@ export default function Header() {
           >
             <h3 className="text-xl font-bold mb-2 text-larq-blue">Offre spéciale</h3>
             <p className="text-gray-700 mb-4">
-              Économisez jusqu'à €40 sur votre commande ! Plus vous achetez, plus vous économisez.
+              Économisez jusqu&apos;à €40 sur votre commande ! Plus vous achetez, plus vous économisez.
             </p>
             <button
               onClick={() => setShowModal(false)}

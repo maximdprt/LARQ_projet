@@ -41,7 +41,7 @@ export default function FAQPage() {
               FAQ & Contact
             </h1>
             <p className="text-xl text-gray-600 text-center mb-12">
-              Besoin d'informations sur nos produits ? Contactez-nous !
+              Besoin d&apos;informations sur nos produits ? Contactez-nous !
             </p>
 
             {/* Formulaire de contact */}
