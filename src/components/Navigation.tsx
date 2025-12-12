@@ -16,6 +16,7 @@ export default function Navigation() {
   const [showCartMenu, setShowCartMenu] = useState(false);
   const [showTeamModal, setShowTeamModal] = useState(false);
   const [showQRCodeModal, setShowQRCodeModal] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [cartAnimation, setCartAnimation] = useState(false);
   const { items, getItemCount, getTotal, removeItem, updateQuantity } = useCart();
   const { user, logout, isAuthenticated } = useAuth();
@@ -53,16 +54,17 @@ export default function Navigation() {
     <nav className="bg-white border-b border-gray-200 sticky top-0 z-40 shadow-sm">
       <div className="max-w-7xl mx-auto px-2 sm:px-4">
         <div className="flex items-center justify-between h-14 sm:h-16">
-          {/* Menu gauche */}
-          <div className="flex items-center space-x-2 sm:space-x-3 md:space-x-6">
+          {/* Menu gauche - Desktop */}
+          <div className="hidden md:flex items-center space-x-3 lg:space-x-6">
             {menuItems.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
                 onClick={(e) => {
                   setActiveMenu(item.label);
+                  setMobileMenuOpen(false);
                 }}
-                className={`text-xs sm:text-sm font-medium transition-colors duration-200 text-gray-700 hover:text-larq-blue ${
+                className={`text-sm lg:text-base font-medium transition-colors duration-200 text-gray-700 hover:text-larq-blue ${
                   activeMenu === item.label ? 'text-larq-blue font-semibold' : ''
                 }`}
               >
@@ -71,19 +73,50 @@ export default function Navigation() {
             ))}
           </div>
 
+          {/* Bouton menu hamburger - Mobile */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden p-2 text-gray-700 hover:text-larq-blue transition-colors"
+            aria-label="Menu"
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              {mobileMenuOpen ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              ) : (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              )}
+            </svg>
+          </button>
+
           {/* Logo centré */}
           <div className="absolute left-1/2 transform -translate-x-1/2">
             <motion.a
               href="/"
               whileHover={{ scale: 1.05 }}
+              onClick={() => setMobileMenuOpen(false)}
               className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-larq-blue hover:text-larq-blue-light transition-colors"
             >
               LARQ
             </motion.a>
           </div>
 
-          {/* Menu droit */}
-          <div className="flex items-center space-x-1 sm:space-x-2 md:space-x-6">
+          {/* Menu droit - Desktop */}
+          <div className="hidden md:flex items-center space-x-2 lg:space-x-6">
             {rightMenuItems.map((item) => {
               if (item.onClick) {
                 return (
@@ -93,7 +126,7 @@ export default function Navigation() {
                       e.preventDefault();
                       item.onClick?.();
                     }}
-                    className="hidden sm:block text-xs md:text-sm font-medium text-gray-700 hover:text-larq-blue transition-colors duration-200"
+                    className="text-sm lg:text-base font-medium text-gray-700 hover:text-larq-blue transition-colors duration-200"
                   >
                     {item.label}
                   </button>
@@ -103,14 +136,14 @@ export default function Navigation() {
                 <a
                   key={item.label}
                   href={item.href}
-                  className="hidden sm:block text-xs md:text-sm font-medium text-gray-700 hover:text-larq-blue transition-colors duration-200"
+                  className="text-sm lg:text-base font-medium text-gray-700 hover:text-larq-blue transition-colors duration-200"
                 >
                   {item.label}
                 </a>
               );
             })}
             
-            {/* Icône Support */}
+            {/* Icône Support - Desktop */}
             <button
               onClick={() => {
                 setShowTeamModal(true);
@@ -118,7 +151,7 @@ export default function Navigation() {
                 setShowCartMenu(false);
                 setShowQRCodeModal(false);
               }}
-              className="relative p-1.5 sm:p-2 text-gray-700 hover:text-larq-blue transition-colors group"
+              className="relative hidden md:block p-2 text-gray-700 hover:text-larq-blue transition-colors group"
               aria-label="Support"
             >
               <svg
@@ -144,12 +177,13 @@ export default function Navigation() {
 
             <QRCodeModal isOpen={showQRCodeModal} onClose={() => setShowQRCodeModal(false)} />
 
-            {/* Icône Compte */}
+            {/* Icône Compte - Desktop */}
             <div className="relative">
               <button
                 onClick={() => {
                   setShowAccountMenu(!showAccountMenu);
                   setShowCartMenu(false);
+                  setMobileMenuOpen(false);
                 }}
                 className="p-1.5 sm:p-2 text-gray-700 hover:text-larq-blue transition-colors"
                 aria-label="Compte"
@@ -206,12 +240,13 @@ export default function Navigation() {
               </AnimatePresence>
             </div>
 
-            {/* Icône Panier */}
+            {/* Icône Panier - Desktop */}
             <div className="relative">
               <motion.button
                 onClick={() => {
                   setShowCartMenu(!showCartMenu);
                   setShowAccountMenu(false);
+                  setMobileMenuOpen(false);
                 }}
                 animate={cartAnimation ? { scale: [1, 1.2, 1] } : {}}
                 transition={{ duration: 0.3 }}
@@ -349,6 +384,118 @@ export default function Navigation() {
             </div>
           </div>
         </div>
+
+        {/* Menu mobile */}
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+              className="md:hidden border-t border-gray-200 bg-white overflow-hidden"
+            >
+              <div className="py-4 px-2 space-y-3">
+                {/* Menu items mobile */}
+                {menuItems.map((item) => (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    onClick={() => {
+                      setActiveMenu(item.label);
+                      setMobileMenuOpen(false);
+                    }}
+                    className={`block px-4 py-2 rounded-lg text-base font-medium transition-colors duration-200 ${
+                      activeMenu === item.label
+                        ? 'bg-larq-blue text-white'
+                        : 'text-gray-700 hover:bg-gray-100'
+                    }`}
+                  >
+                    {item.label}
+                  </a>
+                ))}
+                
+                {/* Right menu items mobile */}
+                {rightMenuItems.map((item) => {
+                  if (item.onClick) {
+                    return (
+                      <button
+                        key={item.label}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          item.onClick?.();
+                          setMobileMenuOpen(false);
+                        }}
+                        className="block w-full text-left px-4 py-2 rounded-lg text-base font-medium text-gray-700 hover:bg-gray-100 transition-colors duration-200"
+                      >
+                        {item.label}
+                      </button>
+                    );
+                  }
+                  return (
+                    <a
+                      key={item.label}
+                      href={item.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="block px-4 py-2 rounded-lg text-base font-medium text-gray-700 hover:bg-gray-100 transition-colors duration-200"
+                    >
+                      {item.label}
+                    </a>
+                  );
+                })}
+
+                {/* Actions mobiles */}
+                <div className="pt-4 border-t border-gray-200 space-y-2">
+                  <button
+                    onClick={() => {
+                      setShowTeamModal(true);
+                      setMobileMenuOpen(false);
+                    }}
+                    className="flex items-center w-full px-4 py-2 rounded-lg text-base font-medium text-gray-700 hover:bg-gray-100 transition-colors"
+                  >
+                    <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    Support
+                  </button>
+                  
+                  <button
+                    onClick={() => {
+                      setShowAccountMenu(!showAccountMenu);
+                      setShowCartMenu(false);
+                    }}
+                    className="flex items-center w-full px-4 py-2 rounded-lg text-base font-medium text-gray-700 hover:bg-gray-100 transition-colors"
+                  >
+                    <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                    {isAuthenticated ? user?.email : 'Compte'}
+                  </button>
+                  
+                  <motion.button
+                    onClick={() => {
+                      setShowCartMenu(!showCartMenu);
+                      setShowAccountMenu(false);
+                    }}
+                    animate={cartAnimation ? { scale: [1, 1.2, 1] } : {}}
+                    transition={{ duration: 0.3 }}
+                    className="flex items-center w-full px-4 py-2 rounded-lg text-base font-medium text-gray-700 hover:bg-gray-100 transition-colors relative"
+                  >
+                    <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                    Panier
+                    {getItemCount() > 0 && (
+                      <span className="ml-auto bg-larq-red text-white text-xs rounded-full w-6 h-6 flex items-center justify-center font-semibold">
+                        {getItemCount()}
+                      </span>
+                    )}
+                  </motion.button>
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </nav>
   );

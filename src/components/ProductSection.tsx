@@ -113,7 +113,7 @@ export default function ProductSection() {
               setScrollPosition((e.target as HTMLDivElement).scrollLeft);
             }}
           >
-            <div className="flex gap-6 pb-4" style={{ minWidth: 'max-content' }}>
+            <div className="flex gap-4 sm:gap-6 pb-4" style={{ minWidth: 'max-content' }}>
               <AnimatePresence mode="wait">
                 {filteredProducts.map((product) => (
                   <motion.div

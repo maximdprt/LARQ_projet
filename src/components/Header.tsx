@@ -36,7 +36,7 @@ export default function Header() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed top-20 left-1/2 transform -translate-x-1/2 bg-white p-4 sm:p-6 rounded-lg shadow-2xl z-50 max-w-md w-[90%] sm:w-auto mx-4"
+            className="fixed top-16 sm:top-20 left-1/2 transform -translate-x-1/2 bg-white p-4 sm:p-6 rounded-lg shadow-2xl z-50 max-w-md w-[calc(100%-2rem)] sm:w-auto mx-4"
           >
             <h3 className="text-xl font-bold mb-2 text-larq-blue">Offre spéciale</h3>
             <p className="text-gray-700 mb-4">

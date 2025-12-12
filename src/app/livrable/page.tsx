@@ -416,9 +416,9 @@ function CroissanceTab() {
 // Composant Opportunité
 function OpportuniteTab() {
   const fundAllocation = [
-    { category: 'Stock & Logistique', percentage: 45, amount: 157500, description: 'Sécuriser un inventaire suffisant pour éviter les ruptures de stock lors des pics saisonniers (Noël, Été)' },
-    { category: 'Marketing & Acquisition', percentage: 35, amount: 122500, description: 'Campagnes agressives sur les réseaux sociaux et partenariats avec des influenceurs clés pour faire baisser le coût d\'acquisition client (CAC)' },
-    { category: 'Opérations & Site Web', percentage: 20, amount: 70000, description: 'Optimisation de l\'expérience utilisateur (UX) sur le site et recrutement d\'un support client dédié' },
+    { category: 'Stock & Logistique', percentage: 45, amount: 540000, description: 'Sécuriser un inventaire suffisant pour éviter les ruptures de stock lors des pics saisonniers (Noël, Été)' },
+    { category: 'Marketing & Acquisition', percentage: 35, amount: 420000, description: 'Campagnes agressives sur les réseaux sociaux et partenariats avec des influenceurs clés pour faire baisser le coût d\'acquisition client (CAC)' },
+    { category: 'Opérations & Site Web', percentage: 20, amount: 240000, description: 'Optimisation de l\'expérience utilisateur (UX) sur le site et recrutement d\'un support client dédié' },
   ];
 
   return (
@@ -463,7 +463,7 @@ function OpportuniteTab() {
           <p className="text-base sm:text-xl md:text-2xl mb-3 sm:mb-4 opacity-90">
             Pour passer du stade de lancement à l&apos;accélération (Scale-up), nous ouvrons notre capital ou sollicitons un financement à hauteur de :
           </p>
-          <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-2">350 000 €</div>
+          <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-2">1,2 Million €</div>
         </div>
 
         <div className="space-y-4 sm:space-y-6">

@@ -62,23 +62,23 @@ export default function AuthPage() {
     <main className="min-h-screen bg-gradient-to-b from-white to-gray-50">
       <Header />
       <Navigation />
-      <section className="py-16 px-4">
+      <section className="py-8 sm:py-12 md:py-16 px-3 sm:px-4">
         <div className="max-w-md mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8"
+            className="bg-white rounded-2xl shadow-lg border border-gray-200 p-4 sm:p-6 md:p-8"
           >
             {/* Tabs */}
-            <div className="flex gap-4 mb-8 border-b border-gray-200">
+            <div className="flex gap-2 sm:gap-4 mb-6 sm:mb-8 border-b border-gray-200">
               <button
                 onClick={() => {
                   setIsLogin(true);
                   setError('');
                   setFormData({ name: '', email: '', password: '', confirmPassword: '' });
                 }}
-                className={`flex-1 py-3 font-semibold transition-colors ${
+                className={`flex-1 py-2 sm:py-3 text-sm sm:text-base font-semibold transition-colors ${
                   isLogin
                     ? 'text-larq-blue border-b-2 border-larq-blue'
                     : 'text-gray-500 hover:text-gray-700'
@@ -92,7 +92,7 @@ export default function AuthPage() {
                   setError('');
                   setFormData({ name: '', email: '', password: '', confirmPassword: '' });
                 }}
-                className={`flex-1 py-3 font-semibold transition-colors ${
+                className={`flex-1 py-2 sm:py-3 text-sm sm:text-base font-semibold transition-colors ${
                   !isLogin
                     ? 'text-larq-blue border-b-2 border-larq-blue'
                     : 'text-gray-500 hover:text-gray-700'
@@ -102,7 +102,7 @@ export default function AuthPage() {
               </button>
             </div>
 
-            <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6 text-center">
               {isLogin ? 'Connectez-vous' : 'Créez votre compte'}
             </h2>
 
@@ -116,10 +116,10 @@ export default function AuthPage() {
               </motion.div>
             )}
 
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
               {!isLogin && (
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="name" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2">
                     Nom complet *
                   </label>
                   <input
@@ -128,14 +128,14 @@ export default function AuthPage() {
                     required={!isLogin}
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-larq-blue focus:border-transparent transition-all"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-larq-blue focus:border-transparent transition-all"
                     placeholder="Votre nom"
                   />
                 </div>
               )}
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="email" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2">
                   Email *
                 </label>
                 <input
@@ -144,13 +144,13 @@ export default function AuthPage() {
                   required
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-larq-blue focus:border-transparent transition-all"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-larq-blue focus:border-transparent transition-all"
                   placeholder="votre@email.com"
                 />
               </div>
 
               <div>
-                <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="password" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2">
                   Mot de passe *
                 </label>
                 <input
@@ -159,14 +159,14 @@ export default function AuthPage() {
                   required
                   value={formData.password}
                   onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-larq-blue focus:border-transparent transition-all"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-larq-blue focus:border-transparent transition-all"
                   placeholder="••••••••"
                 />
               </div>
 
               {!isLogin && (
                 <div>
-                  <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="confirmPassword" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2">
                     Confirmer le mot de passe *
                   </label>
                   <input
@@ -175,7 +175,7 @@ export default function AuthPage() {
                     required={!isLogin}
                     value={formData.confirmPassword}
                     onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-larq-blue focus:border-transparent transition-all"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-larq-blue focus:border-transparent transition-all"
                     placeholder="••••••••"
                   />
                 </div>
@@ -185,7 +185,7 @@ export default function AuthPage() {
                 type="submit"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full px-6 py-4 bg-larq-blue text-white font-semibold rounded-lg hover:bg-larq-blue-light transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-larq-blue focus:ring-offset-2 mt-6"
+                className="w-full px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base bg-larq-blue text-white font-semibold rounded-lg hover:bg-larq-blue-light transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-larq-blue focus:ring-offset-2 mt-4 sm:mt-6"
               >
                 {isLogin ? 'Se connecter' : "S'inscrire"}
               </motion.button>

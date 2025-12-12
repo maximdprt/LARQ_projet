@@ -118,9 +118,9 @@ export default function CheckoutPage() {
       <main className="min-h-screen bg-white">
         <Header />
         <Navigation />
-        <section className="py-16 px-4 text-center">
-          <h1 className="text-3xl font-bold text-gray-900 mb-4">Votre panier est vide</h1>
-          <a href="/bouteilles" className="text-larq-blue hover:underline">
+        <section className="py-12 sm:py-16 px-3 sm:px-4 text-center">
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">Votre panier est vide</h1>
+          <a href="/bouteilles" className="text-base sm:text-lg text-larq-blue hover:underline">
             Retour aux produits
           </a>
         </section>
@@ -132,11 +132,11 @@ export default function CheckoutPage() {
     <main className="min-h-screen bg-gray-50">
       <Header />
       <Navigation />
-      <section className="py-12 px-4">
+      <section className="py-8 sm:py-12 px-3 sm:px-4">
         <div className="max-w-6xl mx-auto">
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">Finaliser votre commande</h1>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-6 sm:mb-8">Finaliser votre commande</h1>
           
-          <div className="grid lg:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             {/* Formulaire */}
             <div className="lg:col-span-2 space-y-4 md:space-y-6">
               {/* Authentification - Si non connecté */}
