@@ -2,13 +2,13 @@
 
 export default function VideoHero() {
   return (
-    <section className="relative w-full min-h-[50vh] sm:min-h-[60vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-black">
+    <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-black">
       <video
         autoPlay
         loop
         muted
         playsInline
-        className="w-full h-full min-h-[50vh] sm:min-h-[60vh] md:min-h-screen object-cover md:object-contain"
+        className="w-full h-auto max-h-screen object-contain"
       >
         <source src="/images/MindVideo_20251209210325_311.mp4" type="video/mp4" />
         Votre navigateur ne supporte pas la lecture de vidéos.

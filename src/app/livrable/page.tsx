@@ -463,7 +463,7 @@ function OpportuniteTab() {
           <p className="text-base sm:text-xl md:text-2xl mb-3 sm:mb-4 opacity-90">
             Pour passer du stade de lancement à l&apos;accélération (Scale-up), nous ouvrons notre capital ou sollicitons un financement à hauteur de :
           </p>
-          <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-2">1,2 Million €</div>
+          <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-2">1,2 Million € POUR 20 %</div>
         </div>
 
         <div className="space-y-4 sm:space-y-6">
