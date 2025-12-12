@@ -57,7 +57,7 @@ export default function QRCodeModal({ isOpen, onClose }: QRCodeModalProps) {
               <div className="p-4 sm:p-6 md:p-8 flex items-center justify-center">
                 <div className="relative w-full max-w-sm aspect-square">
                   <Image
-                    src="/images/frame.png"
+                    src="/images/frame (1).png"
                     alt="QR Code"
                     fill
                     className="object-contain rounded-lg"
