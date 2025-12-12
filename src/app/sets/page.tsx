@@ -69,14 +69,14 @@ export default function SetsPage() {
 
           <div className="max-w-6xl mx-auto">
             {/* Grille des 4 produits */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-6 sm:mb-8">
               {products.map((product) => {
                 const isSelected = selectedBottles.includes(product.id);
                 const canSelect = selectedBottles.length < 2 || isSelected;
                 
                   return (
                   <div key={product.id} className="space-y-2">
-                    <div className="relative h-64 bg-transparent rounded-lg overflow-hidden">
+                    <div className="relative h-48 sm:h-56 md:h-64 bg-transparent rounded-lg overflow-hidden">
                       {product.imagePath && (
                         <div 
                           className="absolute inset-0 cursor-pointer"
@@ -123,22 +123,22 @@ export default function SetsPage() {
                         )}
                       </button>
                     </div>
-                    <p className="text-sm font-medium text-center">{product.displayName || product.name}</p>
+                    <p className="text-xs sm:text-sm font-medium text-center">{product.displayName || product.name}</p>
                   </div>
                 );
               })}
             </div>
 
             {/* Prix et bouton */}
-            <div className="bg-gray-50 rounded-lg p-6 text-center">
-              <div className="mb-4 flex items-center justify-center gap-3 flex-wrap">
-                <span className="text-xl text-gray-400 line-through">
+            <div className="bg-gray-50 rounded-lg p-4 sm:p-6 text-center">
+              <div className="mb-3 sm:mb-4 flex items-center justify-center gap-2 sm:gap-3 flex-wrap">
+                <span className="text-lg sm:text-xl text-gray-400 line-through">
                   €280,00
                 </span>
-                <span className="text-3xl font-bold text-larq-navy">
+                <span className="text-2xl sm:text-3xl font-bold text-larq-navy">
                   €200,00
                 </span>
-                <span className="text-sm font-semibold text-larq-navy bg-larq-navy/10 px-3 py-1 rounded">
+                <span className="text-xs sm:text-sm font-semibold text-larq-navy bg-larq-navy/10 px-2 sm:px-3 py-0.5 sm:py-1 rounded">
                   -{Math.round(((280 - 200) / 280) * 100)}%
                 </span>
               </div>
@@ -147,7 +147,7 @@ export default function SetsPage() {
                 whileTap={{ scale: selectedBottles.length === 2 ? 0.98 : 1 }}
                 onClick={handleAddToCart}
                 disabled={selectedBottles.length !== 2}
-                className={`w-full md:w-auto px-8 py-3 font-medium rounded transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-larq-blue focus:ring-offset-2 ${
+                className={`w-full sm:w-auto px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base font-medium rounded transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-larq-blue focus:ring-offset-2 ${
                   selectedBottles.length !== 2
                     ? 'opacity-50 cursor-not-allowed bg-larq-blue text-white'
                     : addedToCart

@@ -8,12 +8,12 @@ export default function BouteillesPage() {
     <main className="min-h-screen bg-white">
       <Header />
       <Navigation />
-      <section className="py-12 px-4">
+      <section className="py-8 sm:py-12 px-3 sm:px-4">
         <div className="max-w-7xl mx-auto">
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-6 sm:mb-8 text-center">
             Bouteilles LARQ
           </h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {products.map((product) => (
               <BottleCard key={product.id} product={product} />
             ))}

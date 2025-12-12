@@ -21,7 +21,7 @@ export default function ImageModal({ isOpen, onClose, imagePath, alt }: ImageMod
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+            className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-2 sm:p-4"
           >
             {/* Modal Content */}
             <motion.div
@@ -34,11 +34,11 @@ export default function ImageModal({ isOpen, onClose, imagePath, alt }: ImageMod
               {/* Close Button */}
               <button
                 onClick={onClose}
-                className="absolute top-4 right-4 z-10 bg-white/90 hover:bg-white rounded-full p-2 transition-colors shadow-lg"
+                className="absolute top-2 right-2 sm:top-4 sm:right-4 z-10 bg-white/90 hover:bg-white rounded-full p-1.5 sm:p-2 transition-colors shadow-lg"
                 aria-label="Fermer"
               >
                 <svg
-                  className="w-6 h-6 text-gray-900"
+                  className="w-5 h-5 sm:w-6 sm:h-6 text-gray-900"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"

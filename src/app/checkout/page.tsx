@@ -136,24 +136,24 @@ export default function CheckoutPage() {
         <div className="max-w-6xl mx-auto">
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">Finaliser votre commande</h1>
           
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="grid lg:grid-cols-3 gap-6 md:gap-8">
             {/* Formulaire */}
-            <div className="lg:col-span-2 space-y-6">
+            <div className="lg:col-span-2 space-y-4 md:space-y-6">
               {/* Authentification - Si non connecté */}
               {!isAuthenticated && (
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="bg-white rounded-xl shadow-sm border border-gray-200 p-6"
+                  className="bg-white rounded-xl shadow-sm border border-gray-200 p-4 sm:p-6"
                 >
-                  <div className="flex gap-4 mb-6">
+                  <div className="flex gap-2 sm:gap-4 mb-4 sm:mb-6">
                     <button
                       type="button"
                       onClick={() => {
                         setAuthMode('login');
                         setAuthError('');
                       }}
-                      className={`flex-1 py-2 px-4 rounded-lg font-medium transition-colors ${
+                      className={`flex-1 py-2 px-3 sm:px-4 rounded-lg text-sm sm:text-base font-medium transition-colors ${
                         authMode === 'login'
                           ? 'bg-larq-blue text-white'
                           : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
@@ -167,7 +167,7 @@ export default function CheckoutPage() {
                         setAuthMode('signup');
                         setAuthError('');
                       }}
-                      className={`flex-1 py-2 px-4 rounded-lg font-medium transition-colors ${
+                      className={`flex-1 py-2 px-3 sm:px-4 rounded-lg text-sm sm:text-base font-medium transition-colors ${
                         authMode === 'signup'
                           ? 'bg-larq-blue text-white'
                           : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
@@ -177,10 +177,10 @@ export default function CheckoutPage() {
                     </button>
                   </div>
 
-                  <form onSubmit={handleAuth} className="space-y-4">
+                  <form onSubmit={handleAuth} className="space-y-3 sm:space-y-4">
                     {authMode === 'signup' && (
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                        <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2">
                           Nom complet *
                         </label>
                         <input
@@ -188,13 +188,13 @@ export default function CheckoutPage() {
                           required={authMode === 'signup'}
                           value={authData.name}
                           onChange={(e) => setAuthData({ ...authData, name: e.target.value })}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-larq-blue focus:border-transparent transition-all"
+                          className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-larq-blue focus:border-transparent transition-all"
                           placeholder="Jean Dupont"
                         />
                       </div>
                     )}
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2">
                         Email *
                       </label>
                       <input
@@ -202,12 +202,12 @@ export default function CheckoutPage() {
                         required
                         value={authData.email}
                         onChange={(e) => setAuthData({ ...authData, email: e.target.value })}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-larq-blue focus:border-transparent transition-all"
+                        className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-larq-blue focus:border-transparent transition-all"
                         placeholder="votre@email.com"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2">
                         Mot de passe *
                       </label>
                       <input
@@ -215,13 +215,13 @@ export default function CheckoutPage() {
                         required
                         value={authData.password}
                         onChange={(e) => setAuthData({ ...authData, password: e.target.value })}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-larq-blue focus:border-transparent transition-all"
+                        className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-larq-blue focus:border-transparent transition-all"
                         placeholder={authMode === 'signup' ? 'Minimum 6 caractères' : 'Votre mot de passe'}
                       />
                     </div>
                     {authMode === 'signup' && (
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                        <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2">
                           Confirmer le mot de passe *
                         </label>
                         <input
@@ -229,17 +229,17 @@ export default function CheckoutPage() {
                           required={authMode === 'signup'}
                           value={authData.confirmPassword}
                           onChange={(e) => setAuthData({ ...authData, confirmPassword: e.target.value })}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-larq-blue focus:border-transparent transition-all"
+                          className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-larq-blue focus:border-transparent transition-all"
                           placeholder="Confirmez votre mot de passe"
                         />
                       </div>
                     )}
                     {authError && (
-                      <p className="text-red-500 text-sm">{authError}</p>
+                      <p className="text-red-500 text-xs sm:text-sm">{authError}</p>
                     )}
                     <button
                       type="submit"
-                      className="w-full px-6 py-3 bg-larq-blue text-white font-semibold rounded-lg hover:bg-larq-blue-light transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-larq-blue focus:ring-offset-2"
+                      className="w-full px-4 sm:px-6 py-2.5 sm:py-3 text-sm sm:text-base bg-larq-blue text-white font-semibold rounded-lg hover:bg-larq-blue-light transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-larq-blue focus:ring-offset-2"
                     >
                       {authMode === 'login' ? 'Se connecter' : 'Créer mon compte'}
                     </button>
@@ -271,12 +271,12 @@ export default function CheckoutPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: isAuthenticated ? 0 : 0.1 }}
-                className="bg-white rounded-xl shadow-sm border border-gray-200 p-6"
+                className="bg-white rounded-xl shadow-sm border border-gray-200 p-4 sm:p-6"
               >
                 <h2 className="text-xl font-bold text-gray-900 mb-4">Informations de paiement</h2>
-                <form onSubmit={handleSubmit} className="space-y-4">
+                  <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2">
                       Numéro de carte *
                     </label>
                     <input
@@ -290,14 +290,14 @@ export default function CheckoutPage() {
                       }}
                       maxLength={19}
                       placeholder="1234 5678 9012 3456"
-                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-larq-blue focus:border-transparent transition-all ${
+                      className={`w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border rounded-lg focus:ring-2 focus:ring-larq-blue focus:border-transparent transition-all ${
                         errors.cardNumber ? 'border-red-500' : 'border-gray-300'
                       }`}
                     />
                     {errors.cardNumber && <p className="text-red-500 text-xs mt-1">{errors.cardNumber}</p>}
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2">
                       Nom sur la carte *
                     </label>
                     <input
@@ -306,15 +306,15 @@ export default function CheckoutPage() {
                       value={paymentData.cardName}
                       onChange={(e) => setPaymentData({ ...paymentData, cardName: e.target.value })}
                       placeholder="JEAN DUPONT"
-                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-larq-blue focus:border-transparent transition-all ${
+                      className={`w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border rounded-lg focus:ring-2 focus:ring-larq-blue focus:border-transparent transition-all ${
                         errors.cardName ? 'border-red-500' : 'border-gray-300'
                       }`}
                     />
                     {errors.cardName && <p className="text-red-500 text-xs mt-1">{errors.cardName}</p>}
                   </div>
-                  <div className="grid md:grid-cols-2 gap-4">
+                  <div className="grid sm:grid-cols-2 gap-3 sm:gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2">
                         Date d&apos;expiration *
                       </label>
                       <input
@@ -330,14 +330,14 @@ export default function CheckoutPage() {
                         }}
                         maxLength={5}
                         placeholder="MM/AA"
-                        className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-larq-blue focus:border-transparent transition-all ${
+                        className={`w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border rounded-lg focus:ring-2 focus:ring-larq-blue focus:border-transparent transition-all ${
                           errors.expiryDate ? 'border-red-500' : 'border-gray-300'
                         }`}
                       />
                       {errors.expiryDate && <p className="text-red-500 text-xs mt-1">{errors.expiryDate}</p>}
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2">
                         CVV *
                       </label>
                       <input
@@ -350,7 +350,7 @@ export default function CheckoutPage() {
                         }}
                         maxLength={3}
                         placeholder="123"
-                        className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-larq-blue focus:border-transparent transition-all ${
+                        className={`w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border rounded-lg focus:ring-2 focus:ring-larq-blue focus:border-transparent transition-all ${
                           errors.cvv ? 'border-red-500' : 'border-gray-300'
                         }`}
                       />
@@ -362,12 +362,12 @@ export default function CheckoutPage() {
                     disabled={isProcessing || !isAuthenticated}
                     whileHover={{ scale: isProcessing || !isAuthenticated ? 1 : 1.02 }}
                     whileTap={{ scale: isProcessing || !isAuthenticated ? 1 : 0.98 }}
-                    className="w-full px-6 py-4 bg-larq-blue text-white font-semibold rounded-lg hover:bg-larq-blue-light transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-larq-blue focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base bg-larq-blue text-white font-semibold rounded-lg hover:bg-larq-blue-light transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-larq-blue focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {isProcessing ? 'Traitement en cours...' : `Payer €${getTotal().toFixed(2)}`}
                   </motion.button>
                   {!isAuthenticated && (
-                    <p className="text-sm text-red-500 text-center">
+                    <p className="text-xs sm:text-sm text-red-500 text-center">
                       Veuillez vous connecter ou créer un compte pour continuer
                     </p>
                   )}
@@ -380,14 +380,14 @@ export default function CheckoutPage() {
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
-                className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 sticky top-4"
+                className="bg-white rounded-xl shadow-sm border border-gray-200 p-4 sm:p-6 sticky top-4"
               >
-                <h2 className="text-xl font-bold text-gray-900 mb-4">Récapitulatif</h2>
-                <div className="space-y-4 mb-6">
+                <h2 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4">Récapitulatif</h2>
+                <div className="space-y-3 sm:space-y-4 mb-4 sm:mb-6">
                   {items.map((item) => (
-                    <div key={item.id} className="flex gap-3 pb-4 border-b border-gray-200">
+                    <div key={item.id} className="flex gap-2 sm:gap-3 pb-3 sm:pb-4 border-b border-gray-200">
                       {item.imagePath && (
-                        <div className="relative w-16 h-16 flex-shrink-0 bg-gray-100 rounded">
+                        <div className="relative w-12 h-12 sm:w-16 sm:h-16 flex-shrink-0 bg-gray-100 rounded">
                           <Image
                             src={item.imagePath}
                             alt={item.productName}
@@ -398,30 +398,30 @@ export default function CheckoutPage() {
                         </div>
                       )}
                       <div className="flex-1 min-w-0">
-                        <p className="text-sm font-medium text-gray-900 truncate">
+                        <p className="text-xs sm:text-sm font-medium text-gray-900 truncate">
                           {item.productName}
                         </p>
-                        <p className="text-xs text-gray-500">
+                        <p className="text-[10px] sm:text-xs text-gray-500">
                           {item.color} - {item.size}
                         </p>
-                        <p className="text-xs text-gray-500">
+                        <p className="text-[10px] sm:text-xs text-gray-500">
                           Quantité: {item.quantity}
                         </p>
                         <div className="mt-1">
                           {item.originalPrice ? (
-                            <div className="flex items-center gap-2 flex-wrap">
-                              <span className="text-xs text-gray-400 line-through">
+                            <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap">
+                              <span className="text-[10px] sm:text-xs text-gray-400 line-through">
                                 €{(item.originalPrice * item.quantity).toFixed(2)}
                               </span>
-                              <span className="text-sm font-semibold text-larq-navy">
+                              <span className="text-xs sm:text-sm font-semibold text-larq-navy">
                                 €{(item.price * item.quantity).toFixed(2)}
                               </span>
-                              <span className="text-xs font-semibold text-larq-navy bg-larq-navy/10 px-1.5 py-0.5 rounded">
+                              <span className="text-[10px] sm:text-xs font-semibold text-larq-navy bg-larq-navy/10 px-1 sm:px-1.5 py-0.5 rounded">
                                 -{Math.round(((item.originalPrice - item.price) / item.originalPrice) * 100)}%
                               </span>
                             </div>
                           ) : (
-                            <p className="text-sm font-semibold text-larq-navy">
+                            <p className="text-xs sm:text-sm font-semibold text-larq-navy">
                               €{(item.price * item.quantity).toFixed(2)}
                             </p>
                           )}
@@ -430,10 +430,10 @@ export default function CheckoutPage() {
                     </div>
                   ))}
                 </div>
-                <div className="pt-4 border-t border-gray-200">
-                  <div className="flex justify-between items-center pt-4 border-t border-gray-200">
-                    <span className="text-lg font-bold text-gray-900">Total</span>
-                    <span className="text-xl font-bold text-larq-navy">€{getTotal().toFixed(2)}</span>
+                <div className="pt-3 sm:pt-4 border-t border-gray-200">
+                  <div className="flex justify-between items-center pt-3 sm:pt-4 border-t border-gray-200">
+                    <span className="text-base sm:text-lg font-bold text-gray-900">Total</span>
+                    <span className="text-lg sm:text-xl font-bold text-larq-navy">€{getTotal().toFixed(2)}</span>
                   </div>
                 </div>
               </motion.div>

@@ -44,7 +44,7 @@ export default function BottleCard({ product }: BottleCardProps) {
     >
       {/* Image - sans encadré, plus grande, cliquable */}
       <div 
-        className="relative h-80 flex items-center justify-center overflow-hidden bg-transparent cursor-pointer"
+        className="relative h-64 sm:h-72 md:h-80 flex items-center justify-center overflow-hidden bg-transparent cursor-pointer"
         onClick={() => product.imagePath && !imageError && setIsModalOpen(true)}
       >
         {product.imagePath && !imageError ? (
@@ -78,31 +78,31 @@ export default function BottleCard({ product }: BottleCardProps) {
       )}
 
       {/* Contenu */}
-      <div className="p-4">
+      <div className="p-3 sm:p-4">
         {/* Nom fixe selon la couleur */}
-        <p className="text-lg font-semibold text-gray-900 mb-3 text-center">
+        <p className="text-base sm:text-lg font-semibold text-gray-900 mb-2 sm:mb-3 text-center">
           {displayName}
         </p>
 
         {/* Capacité */}
-        <p className="text-sm text-gray-600 mb-3 text-center">Capacité : {selectedSize.volume}</p>
+        <p className="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3 text-center">Capacité : {selectedSize.volume}</p>
 
         {/* Prix */}
-        <div className="flex items-center gap-2 mb-4 flex-wrap justify-center">
+        <div className="flex items-center gap-1.5 sm:gap-2 mb-3 sm:mb-4 flex-wrap justify-center">
           {selectedSize.originalPrice ? (
             <>
-              <span className="text-lg text-gray-400 line-through">
+              <span className="text-base sm:text-lg text-gray-400 line-through">
                 €{selectedSize.originalPrice.toFixed(2)}
               </span>
-              <span className="text-xl font-bold text-larq-navy">
+              <span className="text-lg sm:text-xl font-bold text-larq-navy">
                 €{selectedSize.price.toFixed(2)}
               </span>
-              <span className="text-sm font-semibold text-larq-navy bg-larq-navy/10 px-2 py-1 rounded">
+              <span className="text-xs sm:text-sm font-semibold text-larq-navy bg-larq-navy/10 px-1.5 sm:px-2 py-0.5 sm:py-1 rounded">
                 -{Math.round(((selectedSize.originalPrice - selectedSize.price) / selectedSize.originalPrice) * 100)}%
               </span>
             </>
           ) : (
-            <span className="text-xl font-bold text-gray-900">
+            <span className="text-lg sm:text-xl font-bold text-gray-900">
               €{selectedSize.price.toFixed(2)}
             </span>
           )}
@@ -113,7 +113,7 @@ export default function BottleCard({ product }: BottleCardProps) {
           whileHover={{ scale: addedToCart ? 1 : 1.02 }}
           whileTap={{ scale: 0.98 }}
           onClick={handleAddToCart}
-          className={`w-full px-4 py-2 font-medium rounded transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-larq-blue focus:ring-offset-2 ${
+          className={`w-full px-3 sm:px-4 py-1.5 sm:py-2 text-sm sm:text-base font-medium rounded transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-larq-blue focus:ring-offset-2 ${
             addedToCart
               ? 'bg-green-500 text-white'
               : 'bg-larq-blue text-white hover:bg-larq-blue-light'

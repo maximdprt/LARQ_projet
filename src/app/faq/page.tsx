@@ -30,22 +30,22 @@ export default function FAQPage() {
     <main className="min-h-screen bg-white">
       <Header />
       <Navigation />
-      <section className="py-16 px-4">
+      <section className="py-12 sm:py-16 px-3 sm:px-4">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 text-center">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3 sm:mb-4 text-center">
               FAQ & Contact
             </h1>
-            <p className="text-xl text-gray-600 text-center mb-12">
+            <p className="text-lg sm:text-xl text-gray-600 text-center mb-8 sm:mb-12">
               Besoin d&apos;informations sur nos produits ? Contactez-nous !
             </p>
 
             {/* Formulaire de contact */}
-            <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 md:p-12">
+            <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6 sm:p-8 md:p-12">
               {isSubmitted ? (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
@@ -75,9 +75,9 @@ export default function FAQPage() {
                   </p>
                 </motion.div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="name" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2">
                       Nom complet *
                     </label>
                     <input
@@ -86,13 +86,13 @@ export default function FAQPage() {
                       required
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-larq-blue focus:border-transparent transition-all"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-larq-blue focus:border-transparent transition-all"
                       placeholder="Votre nom"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="email" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2">
                       Email *
                     </label>
                     <input
@@ -101,13 +101,13 @@ export default function FAQPage() {
                       required
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-larq-blue focus:border-transparent transition-all"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-larq-blue focus:border-transparent transition-all"
                       placeholder="votre@email.com"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="product" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="product" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2">
                       Produit concerné *
                     </label>
                     <select
@@ -115,7 +115,7 @@ export default function FAQPage() {
                       required
                       value={formData.product}
                       onChange={(e) => setFormData({ ...formData, product: e.target.value })}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-larq-blue focus:border-transparent transition-all"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-larq-blue focus:border-transparent transition-all"
                     >
                       <option value="">Sélectionnez un produit</option>
                       {products.map((product) => (
@@ -129,7 +129,7 @@ export default function FAQPage() {
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="message" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2">
                       Message *
                     </label>
                     <textarea
@@ -138,7 +138,7 @@ export default function FAQPage() {
                       rows={6}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-larq-blue focus:border-transparent transition-all resize-none"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-larq-blue focus:border-transparent transition-all resize-none"
                       placeholder="Votre message..."
                     />
                   </div>
@@ -147,7 +147,7 @@ export default function FAQPage() {
                     type="submit"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full px-6 py-4 bg-larq-blue text-white font-semibold rounded-lg hover:bg-larq-blue-light transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-larq-blue focus:ring-offset-2"
+                    className="w-full px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base bg-larq-blue text-white font-semibold rounded-lg hover:bg-larq-blue-light transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-larq-blue focus:ring-offset-2"
                   >
                     Envoyer le message
                   </motion.button>

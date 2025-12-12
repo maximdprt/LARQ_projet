@@ -7,6 +7,7 @@ import { useCart } from '@/context/CartContext';
 import { useAuth } from '@/context/AuthContext';
 import Image from 'next/image';
 import TeamModal from './TeamModal';
+import QRCodeModal from './QRCodeModal';
 
 export default function Navigation() {
   const router = useRouter();
@@ -14,6 +15,7 @@ export default function Navigation() {
   const [showAccountMenu, setShowAccountMenu] = useState(false);
   const [showCartMenu, setShowCartMenu] = useState(false);
   const [showTeamModal, setShowTeamModal] = useState(false);
+  const [showQRCodeModal, setShowQRCodeModal] = useState(false);
   const [cartAnimation, setCartAnimation] = useState(false);
   const { items, getItemCount, getTotal, removeItem, updateQuantity } = useCart();
   const { user, logout, isAuthenticated } = useAuth();
@@ -33,16 +35,26 @@ export default function Navigation() {
     { label: 'Livrable', href: '/livrable' },
   ];
 
-  const rightMenuItems = [
+  const rightMenuItems: Array<{ label: string; href: string; onClick?: () => void }> = [
     { label: 'FAQ', href: '/faq' },
+    { 
+      label: 'QRcode', 
+      href: '#', 
+      onClick: () => {
+        setShowQRCodeModal(true);
+        setShowAccountMenu(false);
+        setShowCartMenu(false);
+        setShowTeamModal(false);
+      } 
+    },
   ];
 
   return (
     <nav className="bg-white border-b border-gray-200 sticky top-0 z-40 shadow-sm">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+      <div className="max-w-7xl mx-auto px-2 sm:px-4">
+        <div className="flex items-center justify-between h-14 sm:h-16">
           {/* Menu gauche */}
-          <div className="flex items-center space-x-4 md:space-x-6">
+          <div className="flex items-center space-x-2 sm:space-x-3 md:space-x-6">
             {menuItems.map((item) => (
               <a
                 key={item.label}
@@ -50,7 +62,7 @@ export default function Navigation() {
                 onClick={(e) => {
                   setActiveMenu(item.label);
                 }}
-                className={`text-xs md:text-sm font-medium transition-colors duration-200 text-gray-700 hover:text-larq-blue ${
+                className={`text-xs sm:text-sm font-medium transition-colors duration-200 text-gray-700 hover:text-larq-blue ${
                   activeMenu === item.label ? 'text-larq-blue font-semibold' : ''
                 }`}
               >
@@ -64,23 +76,39 @@ export default function Navigation() {
             <motion.a
               href="/"
               whileHover={{ scale: 1.05 }}
-              className="text-2xl md:text-3xl lg:text-4xl font-bold text-larq-blue hover:text-larq-blue-light transition-colors"
+              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-larq-blue hover:text-larq-blue-light transition-colors"
             >
               LARQ
             </motion.a>
           </div>
 
           {/* Menu droit */}
-          <div className="flex items-center space-x-2 md:space-x-6">
-            {rightMenuItems.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className="text-xs md:text-sm font-medium text-gray-700 hover:text-larq-blue transition-colors duration-200"
-              >
-                {item.label}
-              </a>
-            ))}
+          <div className="flex items-center space-x-1 sm:space-x-2 md:space-x-6">
+            {rightMenuItems.map((item) => {
+              if (item.onClick) {
+                return (
+                  <button
+                    key={item.label}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      item.onClick?.();
+                    }}
+                    className="hidden sm:block text-xs md:text-sm font-medium text-gray-700 hover:text-larq-blue transition-colors duration-200"
+                  >
+                    {item.label}
+                  </button>
+                );
+              }
+              return (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  className="hidden sm:block text-xs md:text-sm font-medium text-gray-700 hover:text-larq-blue transition-colors duration-200"
+                >
+                  {item.label}
+                </a>
+              );
+            })}
             
             {/* Icône Support */}
             <button
@@ -88,12 +116,13 @@ export default function Navigation() {
                 setShowTeamModal(true);
                 setShowAccountMenu(false);
                 setShowCartMenu(false);
+                setShowQRCodeModal(false);
               }}
-              className="relative p-2 text-gray-700 hover:text-larq-blue transition-colors group"
+              className="relative p-1.5 sm:p-2 text-gray-700 hover:text-larq-blue transition-colors group"
               aria-label="Support"
             >
               <svg
-                className="w-5 h-5"
+                className="w-4 h-4 sm:w-5 sm:h-5"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -113,6 +142,8 @@ export default function Navigation() {
             </button>
             <TeamModal isOpen={showTeamModal} onClose={() => setShowTeamModal(false)} />
 
+            <QRCodeModal isOpen={showQRCodeModal} onClose={() => setShowQRCodeModal(false)} />
+
             {/* Icône Compte */}
             <div className="relative">
               <button
@@ -120,11 +151,11 @@ export default function Navigation() {
                   setShowAccountMenu(!showAccountMenu);
                   setShowCartMenu(false);
                 }}
-                className="p-2 text-gray-700 hover:text-larq-blue transition-colors"
+                className="p-1.5 sm:p-2 text-gray-700 hover:text-larq-blue transition-colors"
                 aria-label="Compte"
               >
                 <svg
-                  className="w-5 h-5"
+                  className="w-4 h-4 sm:w-5 sm:h-5"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -143,7 +174,7 @@ export default function Navigation() {
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
-                    className="absolute right-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50"
+                    className="absolute right-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50 max-w-[calc(100vw-2rem)]"
                   >
                     {isAuthenticated && user ? (
                       <>
@@ -184,11 +215,11 @@ export default function Navigation() {
                 }}
                 animate={cartAnimation ? { scale: [1, 1.2, 1] } : {}}
                 transition={{ duration: 0.3 }}
-                className="relative p-2 text-gray-700 hover:text-larq-blue transition-colors"
+                className="relative p-1.5 sm:p-2 text-gray-700 hover:text-larq-blue transition-colors"
                 aria-label="Panier"
               >
                 <svg
-                  className="w-5 h-5"
+                  className="w-4 h-4 sm:w-5 sm:h-5"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -204,7 +235,7 @@ export default function Navigation() {
                   key={getItemCount()}
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
-                  className="absolute top-0 right-0 bg-larq-red text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-semibold"
+                  className="absolute top-0 right-0 bg-larq-red text-white text-[10px] sm:text-xs rounded-full w-4 h-4 sm:w-5 sm:h-5 flex items-center justify-center font-semibold"
                 >
                   {getItemCount()}
                 </motion.span>
@@ -215,7 +246,7 @@ export default function Navigation() {
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
-                    className="absolute right-0 mt-2 w-96 bg-white rounded-md shadow-lg z-50 max-h-96 overflow-y-auto"
+                    className="absolute right-0 mt-2 w-[calc(100vw-2rem)] sm:w-96 bg-white rounded-md shadow-lg z-50 max-h-96 overflow-y-auto"
                   >
                     {items.length === 0 ? (
                       <>

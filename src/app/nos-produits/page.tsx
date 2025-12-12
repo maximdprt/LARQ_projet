@@ -5,7 +5,7 @@ import ProductDescription from '@/components/ProductDescription';
 
 export default function NosProduitsPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white overflow-x-hidden">
       <Header />
       <Navigation />
       <VideoHero />
